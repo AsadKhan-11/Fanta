@@ -21,7 +21,7 @@ const NavMenu = [
 
 const Navbar = () => {
   return (
-    <main className="text-white bg-orange-500">
+    <main className="text-white ">
       <div className="container flex justify-between items-center">
         {/* Logo section */}
 
