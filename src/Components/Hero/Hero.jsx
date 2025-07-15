@@ -38,6 +38,34 @@ const Drinks = [
 const Hero = () => {
   const [activeData, setActiveData] = useState(Drinks[0]);
 
+  const slideRight = (delay) => {
+    return {
+      hidden: {
+        opacity: 0,
+        x: 100,
+      },
+
+      visible: {
+        opacity: 1,
+        x: 0,
+
+        transition: {
+          delay: delay,
+          duration: 0.5,
+          ease: easeInOut,
+        },
+      },
+      exit: {
+        opacity: 0,
+        x: -150,
+        transition: {
+          duration: 0.2,
+          ease: easeInOut,
+        },
+      },
+    };
+  };
+
   const handleActiveData = (data) => {
     setActiveData(data);
   };
@@ -54,22 +82,52 @@ const Hero = () => {
         <div className="container grid grid-cols-1 md:grid-cols-2 min-h-[500px]">
           <div className="flex flex-col justify-between py-14 md:py-0 xl:max-w-[500px] order-2 md:order-1 ">
             <div className="text-white space-y-5 text-center md:text-left">
-              <h1 className=" text-3xl lg:text-6xl xl:text-7xl leading-tight font-bold hand-writing text-shadow">
-                {activeData.title}
-              </h1>
-              <p className="leading-loose text-white/80">
-                {activeData.subtitle}
-              </p>
-              <button className="px-4 py-2 inline-block bg-white rounded-sm font-normal">
-                Order Now
-              </button>
+              <AnimatePresence node="wait">
+                <motion.h1
+                  variants={slideRight(0.2)}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  className=" text-3xl lg:text-6xl xl:text-7xl leading-tight font-bold hand-writing text-shadow"
+                >
+                  {activeData.title}
+                </motion.h1>
+              </AnimatePresence>
+              <AnimatePresence node="wait">
+                <motion.p
+                  variants={slideRight(0.4)}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  className="leading-loose text-white/80"
+                >
+                  {activeData.subtitle}
+                </motion.p>
+              </AnimatePresence>
+              <AnimatePresence node="wait">
+                <motion.button
+                  variants={slideRight(0.6)}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  className="px-4 py-2 inline-block bg-white rounded-sm font-normal"
+                >
+                  Order Now
+                </motion.button>
+              </AnimatePresence>
+
               {/* list separator */}
 
-              <div className="flex justify-center items-center gap-4 md:justify-start !md:mt-24 !md:mb-10 ">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ ease: "easeInOut", duration: 0.5, delay: 0.2 }}
+                className="flex justify-center items-center gap-4 md:justify-start !md:mt-24 !md:mb-10 "
+              >
                 <div className="w-[80px] h-[1px] bg-white"></div>
                 <p>Top Recommendations</p>
                 <div className="w-[80px] h-[1px] bg-white"></div>
-              </div>
+              </motion.div>
               {/* Image selector */}
               <div className="grid grid-cols-3 gap-8">
                 {Drinks.map((data, index) => (
