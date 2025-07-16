@@ -9,3 +9,10 @@
 .hand-writing {
   font-family: "Merienda", cursive;
 }
+.text-shadow {
+  text-shadow: -6px 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+.img-shadow {
+  filter: drop-shadow(-6px 8px 15px rgba(0, 0, 0, 0.4));
+}
