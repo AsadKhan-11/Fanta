@@ -1,12 +1,44 @@
-# React + Vite
+# Fanta Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A vibrant and engaging landing page for Fanta, designed using React and styled to match the energetic and colorful vibe of the Fanta brand. Smooth animations and interactive visuals give the site a lively user experience.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-  Interactive product slider
+-  Bright and colorful Fanta-themed UI
+-  Framer Motion for smooth animations
+-  Fully responsive for all screen sizes
 
-## Expanding the ESLint configuration
+## 🔧 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React**
+- **Framer Motion**
+- **Tailwind** 
+- **Vite** 
+
+## 📸 Screenshots
+
+ ### Desktop view  
+
+ ![Desktop](src/screenshots/Desktop.png) 
+
+ ### Mobile view
+  
+ ![Mobile](src/screenshots/Mobile.png) 
+
+## 🛠️ Installation
+
+1. Clone the repo:
+   
+   git clone https://github.com/your-username/fanta-website.git
+   
+   cd fanta-website
+   
+3. Install dependencies:
+
+    npm install
+
+4. Start the dev server:
+
+    npm run dev
+
